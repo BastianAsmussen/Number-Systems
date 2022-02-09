@@ -60,7 +60,7 @@ public class Main {
             octal = String.valueOf(input);
             hexadecimal = Long.toHexString(Long.parseLong(decimal));
 
-        } else if (mode == 'h') { // Hex mode.
+        } else if (mode == 'h') { // Hexadecimal mode.
 
             decimal = String.valueOf(Long.parseLong(String.valueOf(input), 16));
             binary = Long.toBinaryString(Long.parseLong(decimal));
