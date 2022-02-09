@@ -39,38 +39,41 @@ public class Main {
         String octal = "";
         String hexadecimal = "";
 
-        if (mode == 'd') { // Decimal mode.
+        switch (mode) {
 
-            decimal = String.valueOf(input);
-            binary = Long.toBinaryString(Long.parseLong(input));
-            octal = Long.toOctalString(Long.parseLong(input));
-            hexadecimal = Long.toHexString(Long.parseLong(input));
+            case 'd' -> { // Decimal mode.
 
-        } else if (mode == 'b') { // Binary mode.
+                decimal = String.valueOf(input);
+                binary = Long.toBinaryString(Long.parseLong(input));
+                octal = Long.toOctalString(Long.parseLong(input));
+                hexadecimal = Long.toHexString(Long.parseLong(input));
 
-            decimal = String.valueOf(Long.parseLong(String.valueOf(input), 2));
-            binary = String.valueOf(input);
-            octal = Long.toOctalString(Long.parseLong(decimal));
-            hexadecimal = Long.toHexString(Long.parseLong(decimal));
+            } case 'b' -> { // Binary mode.
 
-        } else if (mode == 'o') { // Octal mode.
+                decimal = String.valueOf(Long.parseLong(String.valueOf(input), 2));
+                binary = String.valueOf(input);
+                octal = Long.toOctalString(Long.parseLong(decimal));
+                hexadecimal = Long.toHexString(Long.parseLong(decimal));
 
-            decimal = String.valueOf(Long.parseLong(String.valueOf(input), 8));
-            binary = Long.toBinaryString(Long.parseLong(decimal));
-            octal = String.valueOf(input);
-            hexadecimal = Long.toHexString(Long.parseLong(decimal));
+            } case 'o' -> { // Octal mode.
 
-        } else if (mode == 'h') { // Hexadecimal mode.
+                decimal = String.valueOf(Long.parseLong(String.valueOf(input), 8));
+                binary = Long.toBinaryString(Long.parseLong(decimal));
+                octal = String.valueOf(input);
+                hexadecimal = Long.toHexString(Long.parseLong(decimal));
 
-            decimal = String.valueOf(Long.parseLong(String.valueOf(input), 16));
-            binary = Long.toBinaryString(Long.parseLong(decimal));
-            octal = Long.toOctalString(Long.parseLong(decimal));
-            hexadecimal = String.valueOf(input);
+            } case 'h' -> { // Hexadecimal mode.
 
-        } else { // Unsupported mode.
+                decimal = String.valueOf(Long.parseLong(String.valueOf(input), 16));
+                binary = Long.toBinaryString(Long.parseLong(decimal));
+                octal = Long.toOctalString(Long.parseLong(decimal));
+                hexadecimal = String.valueOf(input);
 
-            System.err.println("Unsupported conversion mode!");
-            System.exit(1);
+            } default -> { // Unsupported mode.
+
+                System.err.println("Unsupported conversion mode!");
+                System.exit(1);
+            }
         }
 
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
