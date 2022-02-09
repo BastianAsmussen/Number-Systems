@@ -78,6 +78,6 @@ public class Main {
 
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
 
-        return String.format("Decimal: %s%nBinary: %s (%d bits)%nOctal: %s%nHexadecimal: %s%n", decimalFormat.format(Long.parseLong(decimal)), binary, binary.length(), decimalFormat.format(Long.parseLong(octal)), hexadecimal);
+        return String.format("Decimal: %s%nBinary: %s (%d bits)%nOctal: %s%nHexadecimal: %s%n", decimalFormat.format(Long.parseLong(decimal)), binary, binary.length(), decimalFormat.format(Long.parseLong(octal)), hexadecimal.toUpperCase());
     }
 }
