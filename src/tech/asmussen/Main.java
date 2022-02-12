@@ -26,13 +26,13 @@ public class Main {
 
             String[] input = rawInput.split(" ");
 
-            System.out.println(convert(String.valueOf(input[0]).charAt(0), input[1]));
+            System.out.println(convertValue(String.valueOf(input[0]).charAt(0), input[1]));
         }
 
         System.out.println("Exiting...");
     }
 
-    public static String convert(char mode, String input) {
+    public static String convertValue(char mode, String input) {
 
         String decimal = "";
         String binary = "";
