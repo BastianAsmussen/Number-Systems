@@ -34,6 +34,8 @@ public class Main {
 
     public static String convertValue(char mode, String input) {
 
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+
         String decimal = "";
         String binary = "";
         String octal = "";
@@ -76,8 +78,9 @@ public class Main {
             }
         }
 
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-
         return String.format("Decimal: %s%nBinary: %s (%d bits)%nOctal: %s%nHexadecimal: %s%n", decimalFormat.format(Long.parseLong(decimal)), binary, binary.length(), decimalFormat.format(Long.parseLong(octal)), hexadecimal.toUpperCase());
     }
 }
+/*
+IPv6 as decimal: 65152.7338.28842.62368.4102
+ */
