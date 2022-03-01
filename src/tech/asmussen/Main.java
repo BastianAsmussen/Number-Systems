@@ -21,7 +21,7 @@ public class Main {
             rawInput = scanner.nextLine();
 
             final long START_TIME = System.currentTimeMillis();
-            
+
             if (rawInput.equalsIgnoreCase("q")) break;
 
             String[] input = rawInput.split(" ");

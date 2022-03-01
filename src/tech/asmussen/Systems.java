@@ -6,7 +6,7 @@ public class Systems {
 
     public static String convertValue(char mode, String input) {
 
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        final DecimalFormat FORMAT = new DecimalFormat("###,###,###");
 
         String decimal = "";
         String binary = "";
@@ -49,7 +49,7 @@ public class Systems {
                 System.exit(1);
             }
         }
-
-        return String.format("Decimal: %s%nBinary: %s (%d bits)%nOctal: %s%nHexadecimal: %s", decimalFormat.format(Long.parseLong(decimal)), binary, binary.length(), decimalFormat.format(Long.parseLong(octal)), hexadecimal.toUpperCase());
+        
+        return String.format("Decimal: %s%nBinary: %s (%d bits)%nOctal: %s%nHexadecimal: %s", FORMAT.format(Long.parseLong(decimal)), binary, binary.length(), FORMAT.format(Long.parseLong(octal)), hexadecimal.toUpperCase());
     }
 }
